@@ -1,0 +1,11 @@
+# Generated run results and restricted empirical inputs are not release material.
+**/outputs/
+*.dta
+*.RData
+*.rds
+*.log
+*.smcl
+Rplots.pdf
+.Rhistory
+.DS_Store
+__pycache__/
