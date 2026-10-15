@@ -1,6 +1,7 @@
-# Run one normal-state scenario with the unchanged formal model snapshot.
+# Run one scenario of the JG model in the normal macroeconomic state, check its
+# accounting and write the results.
 # Usage: Rscript --vanilla run_example.R N0 [output_directory]
-# N0 is baseline; N1-N6 select the corresponding original policy rules.
+# N0 is the no-policy baseline; N1-N6 are the six policy designs (see README).
 
 main <- function() {
   # Windows may start R in the C locale even when paths contain Unicode.
@@ -45,7 +46,7 @@ main <- function() {
     model <- new.env(parent = globalenv())
     model$shock <- as.integer(sub("N", "", scenario))
     model$phase3_spec <- list(policy = model$shock, shock_type = "none", n_periods = 100L)
-    message("Running unchanged formal model: ", scenario)
+    message("Running model scenario: ", scenario)
     started <- proc.time()[["elapsed"]]
     sys.source(file.path(code_dir, "equation_ap_csv1.R"), envir = model)
     analysis <- new.env(parent = globalenv())

@@ -3,16 +3,16 @@ clear all
 set more off
 set maxvar 10000
 
-* Portable extraction of 03_code/stata/04_baseline_L1.do, inspected 2026-10-14.
-* Only input/output plumbing and explanatory checks are adapted.
-* The regression, sample flag, controls, FE, clustering and numerical anchors
-* are retained. This is a frozen observational benchmark, not a causal design.
+* Baseline regression: recorded crime on the lagged city high-tech share, with
+* four lagged controls, city and year fixed effects and city-clustered SEs.
+* The script stops unless it reproduces the reported estimate and sample.
+* This is an observational association, not a causal design.
 *
 * From the repository root in Stata:
 * do "high-tech-and-urban-crime/code/baseline_L1.do" "path/to/baseline_city_year_v03.dta" "high-tech-and-urban-crime/outputs/baseline"
 args input_file output_dir
 if `"`input_file'"'=="" | `"`output_dir'"'=="" {
-    display as error "Supply the canonical v03 .dta input and a new output directory."
+    display as error "Supply the v03 city-year panel (.dta) and a new output directory."
     exit 198
 }
 confirm file `"`input_file'"'
@@ -80,5 +80,5 @@ postclose pr
 use `"`result'"', clear
 format coefficient std_error p_value %18.12f
 export delimited using `"`output_dir'/baseline_L1_results.csv"', datafmt
-display as result "BASELINE_L1_COMPLETE: all frozen anchors passed."
+display as result "BASELINE_L1_COMPLETE: reported estimate and sample reproduced."
 log close
