@@ -14,8 +14,9 @@ The model has five household income groups (H1 lowest to H5 highest), firms, com
 
 The numbers below are for the normal macroeconomic state, 40 periods after the policy starts, averaged over the stochastic simulation paths and compared with the no-policy baseline.
 
-- Job guarantees raise output much more than transfers. Output is 5.6% higher with a job guarantee that maximizes employment and 6.2% higher with one that pays a higher wage (both financed by debt). A transfer financed by a tax on high incomes raises output by 1.0%. The employment-maximizing job guarantee lowers unemployment to 0.2%, against 7.1% in the baseline.
-- Tax-financed transfers reduce relative inequality more. The income Gini across the five groups falls by 3.3% with the transfer and by 1.1% and 1.8% with the two job guarantees. The income share of the bottom 40% rises by 7.2% with the transfer and by 3.7% and 4.9% with the job guarantees.
+- How a policy is financed matters more for output than what it buys. With debt finance, output is 5.6% higher with a job guarantee that maximizes employment, 6.2% higher with one that pays a higher wage, and 6.7% higher with a transfer. A transfer paid for by a tax on high incomes raises output by only 1.0%.
+- Job guarantees do far more for unemployment. The employment-maximizing job guarantee lowers unemployment to 0.2%, against 6.9% with the debt-financed transfer and 7.1% in the baseline.
+- Transfers reduce relative inequality more under either kind of financing. With debt finance, the income Gini across the five groups falls by 2.2% with the transfer and by 1.1% and 1.8% with the two job guarantees. With the high-income tax, it falls by 3.3% with the transfer and 2.9% with the higher-wage job guarantee.
 - A decomposition of the Gini by income source explains the difference. The extra output under a job guarantee also raises profit and dividend income for the top group (H5), which offsets part of the fall in inequality.
 
 ## Figures
