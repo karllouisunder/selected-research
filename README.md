@@ -20,9 +20,9 @@ A stock-flow consistent macro-financial model in R with five household income gr
 
 ## The Other Side of Progress: High-Tech Expansion and Urban Crime
 
-*Undergraduate thesis, advisor Lanlan Wang*
+*Undergraduate thesis, advisor Lanlan Wang (thesis title: Industrial Upgrading and Social Disorder: The Crime Effects of High-Tech Industrial Expansion)*
 
-I turned about 7.5 million firm-year tax-survey records into city-level high-tech shares and linked them with recorded crime and city statistics, giving a panel of 280 Chinese cities from 2009 to 2017.
+I turned about 7.5 million firm-year tax-survey records into city-level high-tech shares and linked them with criminal-case counts from published court judgments and with city statistics, giving a panel of 280 Chinese cities from 2009 to 2017.
 
 <a href="high-tech-and-urban-crime/README.md"><img src="high-tech-and-urban-crime/figures/C_estimates.svg" width="720" alt="Fixed-effects estimates of the association between high-tech share and recorded crime, its variation with industrial structure, and related local outcomes"></a>
 

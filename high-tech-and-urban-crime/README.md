@@ -2,21 +2,22 @@
 
 ## High-Tech Expansion and Urban Crime
 
-**Undergraduate thesis, Jintao Lyu, advisor Lanlan Wang** · [Back to selected research](../README.md)
+**Undergraduate thesis, Jintao Lyu, advisor Lanlan Wang** · Thesis title: *Industrial Upgrading and Social Disorder: The Crime Effects of High-Tech Industrial Expansion* · [Back to selected research](../README.md)
 
 ## Question
 
-When high-tech industry grows in a Chinese city, who benefits, and does uneven opportunity show up in recorded crime? I also ask whether the answer depends on where the city started, in particular how much it relied on manufacturing and how much room its service sector had to absorb workers.
+When high-tech industry grows in a Chinese city, who benefits, and does uneven opportunity show up in crime? I also ask whether the answer depends on where the city started, in particular how much it relied on manufacturing and how much room its service sector had to absorb workers.
 
-I built the data myself. I classified about **7.5 million firm-year records** from China's national tax survey (2007–2020) into high-tech and other industries, aggregated them into city-level high-tech shares, and linked these with recorded criminal cases and the China City Statistical Yearbook. The estimation panel covers **280 cities and 2,464 city-years from 2009 to 2017**.
+I built the data myself. I classified about **7.5 million firm-year records** from China's national tax survey (2007–2020) into high-tech and other industries, aggregated them into city-level high-tech shares, and linked these with criminal-case counts compiled from court judgments published on China Judgements Online and with the China City Statistical Yearbook. The estimation panel covers **280 cities and 2,464 city-years from 2009 to 2017**.
 
 ## Key findings
 
 All estimates use city and year fixed effects, with standard errors clustered by city.
 
-- Cities with a higher high-tech share record more crime. A one-percentage-point higher high-tech share in the previous year is associated with 0.48 more recorded criminal cases per 10,000 residents (SE 0.15, p = 0.001), about 0.16 of a standard deviation.
+- Cities with a higher high-tech share record more crime. A one-percentage-point higher high-tech share in the previous year is associated with 0.48 more criminal cases per 10,000 residents (SE 0.15, p = 0.001), about 0.16 of a standard deviation.
 - The association depends on the city's starting structure. In exploratory interaction models it is stronger in cities that depended more on manufacturing (0.30 SD more at the 75th than at the 25th percentile) and weaker where service capacity was high (0.23 SD less).
 - A higher high-tech share also goes with a wider urban–rural income gap, more knowledge-intensive jobs, more employment polarization and a smaller manufacturing share of secondary-sector jobs, each by 0.06–0.07 SD.
+- I also examined how public services, such as basic-education teachers, hospital beds and doctors, are divided between the urban core and peripheral districts. These results are exploratory and are not shown here.
 
 ## Figures
 
@@ -49,7 +50,7 @@ Each marker is a city, placed by its manufacturing dependence and service capaci
 |---|---|
 | [code/01_clean_firm_data.do](code/01_clean_firm_data.do) | Cleans the 2007–2020 tax-survey records into a firm-year file with four-digit industry codes, and applies the list of 181 high-tech codes |
 | [code/02_construct_hightech_treatment.do](code/02_construct_hightech_treatment.do) | Turns the firm-year file into each city's yearly high-tech share (high-tech firms as a percentage of all firms) |
-| [code/03_build_city_year_panel.do](code/03_build_city_year_panel.do) | Merges the high-tech share with recorded crime and city statistics into the city-year panel |
+| [code/03_build_city_year_panel.do](code/03_build_city_year_panel.do) | Merges the high-tech share with criminal-case counts and city statistics into the city-year panel |
 | [code/baseline_L1.do](code/baseline_L1.do) | Runs the baseline regression and checks that it reproduces the reported estimate |
 
 The tax-survey, crime and city data are restricted and not included. With the data placed under `02_data/raw/`, run the scripts in Stata 18 with `reghdfe` and `ftools` installed:
@@ -75,8 +76,8 @@ reghdfe crime_rate_10k_corrected L1_hitech_share_all ///
 
 ## Limitations
 
-- The estimates are conditional associations, not causal effects. I am still working on a design that can identify the effect of high-tech expansion.
-- Recorded crime depends on reporting and policing as well as on how much crime occurs.
+- The estimates are conditional associations, not causal effects. The thesis also reported a Bartik shift-share instrumental-variable design and a set of robustness checks; I have set the instrument aside until its industry shares and national shocks can be validated, and I am still working on a design that can identify the effect of high-tech expansion.
+- The crime measure counts criminal cases in published court judgments, so it depends on reporting, policing, prosecution and court disclosure as well as on how much crime occurs.
 - Many firm records have no usable industry code, so the high-tech share is measured with error.
 
 [Back to selected research](../README.md)
